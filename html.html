@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fefefe;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #addcf4;
+            color: #060000;
+            padding: 1px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 1px solid #addcf4;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h5 style="text-align: center;">Fill Out Your Info | Scan the QR Code | You're All Set</h5>
+    </header>
+
+    <section>
+        <h3>Personal Information</h3>
+        <form>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+
+            <label for="mname">Middle Name:</label>
+            <input type="text" id="mname" name="mname" placeholder="Enter your middle name">
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter your last name">
+
+            <label for="suffix">Suffix:</label>
+            <input type="text" id="suffix" name="suffix" placeholder="e.g., Jr., Sr., III">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address">
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter your city">
+
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" placeholder="Enter your zip code">
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="Enter your state">
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="Enter your country">
+
+            <label for="language">Primary Language:</label>
+            <input type="text" id="language" name="language" placeholder="Enter your primary language">
+
+            <label for="ssn">Last 4 digits of Social Security Number:</label>
+            <input type="text" id="ssn" name="ssn" maxlength="4" placeholder="****">
+
+            <label for="contact">Your Contact Phone Number:</label>
+            <input type="tel" id="contact" name="contact" placeholder="Enter your phone number">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+
+            <h3>Emergency Contacts</h3>
+            <label for="emergency1-fname">Emergency Contact 1 - First Name:</label>
+            <input type="text" id="emergency1-fname" name="emergency1-fname" placeholder="Enter first name">
+
+            <label for="emergency1-lname">Last Name:</label>
+            <input type="text" id="emergency1-lname" name="emergency1-lname" placeholder="Enter last name">
+
+            <label for="emergency1-relation">Relation to Patient:</label>
+            <input type="text" id="emergency1-relation" name="emergency1-relation" placeholder="Enter relation">
+
+            <label for="emergency1-phone">Phone Number:</label>
+            <input type="tel" id="emergency1-phone" name="emergency1-phone" placeholder="Enter phone number">
+
+            <label for="emergency1-email">Email:</label>
+            <input type="email" id="emergency1-email" name="emergency1-email" placeholder="Enter email">
+
+            <label for="emergency2-fname">Emergency Contact 2 - First Name:</label>
+            <input type="text" id="emergency2-fname" name="emergency2-fname" placeholder="Enter first name">
+
+            <label for="emergency2-lname">Last Name:</label>
+            <input type="text" id="emergency2-lname" name="emergency2-lname" placeholder="Enter last name">
+
+            <label for="emergency2-relation">Relation to Patient:</label>
+            <input type="text" id="emergency2-relation" name="emergency2-relation" placeholder="Enter relation">
+
+            <label for="emergency2-phone">Phone Number:</label>
+            <input type="tel" id="emergency2-phone" name="emergency2-phone" placeholder="Enter phone number">
+
+            <label for="emergency2-email">Email:</label>
+            <input type="email" id="emergency2-email" name="emergency2-email" placeholder="Enter email">
+
+            <h3>Insurance Information</h3>
+            <label for="provider">Provider:</label>
+            <input type="text" id="provider" name="provider" placeholder="Enter provider name">
+
+            <label for="policy-number">Policy Number:</label>
+            <input type="text" id="policy-number" name="policy-number" placeholder="Enter policy number">
+
+            <label for="policy-holder">Full Name of Policy Holder:</label>
+            <input type="text" id="policy-holder" name="policy-holder" placeholder="Enter full name">
+
+            <label for="policy-dob">Date of Birth of Policy Holder:</label>
+            <input type="date" id="policy-dob" name="policy-dob">
+
+            <h3>Billing Address</h3>
+            <label for="billing-address">Address:</label>
+            <input type="text" id="billing-address" name="billing-address" placeholder="Enter billing address">
+
+            <label for="billing-city">City:</label>
+            <input type="text" id="billing-city" name="billing-city" placeholder="Enter city">
+
+            <label for="billing-zip">Zip Code:</label>
+            <input type="text" id="billing-zip" name="billing-zip" placeholder="Enter zip code">
+
+            <label for="billing-state">State:</label>
+            <input type="text" id="billing-state" name="billing-state" placeholder="Enter state">
+
+            <label for="billing-country">Country:</label>
+            <input type="text" id="billing-country" name="billing-country" placeholder="Enter country">
+
+            <h3>Medical History</h3>
+            <label for="medications">Current Medications:</label>
+            <textarea id="medications" name="medications" placeholder="List any current medications"></textarea>
+
+            <label for="allergies">Allergies:</label>
+            <textarea id="allergies" name="allergies" placeholder="List any known allergies"></textarea>
+
+            <label for="past-illnesses">Past Illnesses, Surgeries, and Treatments:</label>
+            <textarea id="past-illnesses" name="past-illnesses" placeholder="Describe any relevant past medical conditions"></textarea>
+
+            <label for="family-history">Family Medical History (hereditary conditions):</label>
+            <textarea id="family-history" name="family-history" placeholder="Describe family medical history"></textarea>
+        </form>
+
+        <button> 
+            submit
+        </button>
+    </section>
+</body>
+</html>
