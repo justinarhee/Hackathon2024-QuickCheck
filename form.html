@@ -6,39 +6,79 @@
     <title>Medical Information Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fefefe;
-            margin: 0;
-            padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fefefe;
+        margin: 0;
+        padding: 0;
         }
         header {
             background-color: #addcf4;
             color: #060000;
-            padding: 1px;
+            padding: 0.5rem;
         }
         section {
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            border: 1px solid #addcf4;
-            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 50rem;
+            border: 0.1rem solid #addcf4;
+            border-radius: 1rem;
             background-color: #f9f9f9;
         }
         label {
             display: block;
-            margin-top: 10px;
+            margin-top: 1rem;
         }
         input, select, textarea {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            max-width: 100%;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            border: 0.1rem solid #ccc;
+            box-sizing: border-box;
         }
         h3 {
             text-align: center;
         }
+        .submit-button {
+            display: block;
+            margin: 3rem auto;
+            padding: 1.5rem 3rem;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 1rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            text-align: center;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 0.1rem solid #ccc;
+            box-sizing: border-box;
+        }
+
+
+        input {
+            margin: auto;
+            display: block;
+        }
+
+        section {
+            background-color: #b7cfd7;
+
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -48,7 +88,7 @@
 
     <section>
         <h3>Personal Information</h3>
-        <form>
+        <form method="post">
             <label for="fname">First Name:</label>
             <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
 
@@ -56,50 +96,57 @@
             <input type="text" id="mname" name="mname" placeholder="Enter your middle name">
 
             <label for="lname">Last Name:</label>
-            <input type="text" id="lname" name="lname" placeholder="Enter your last name">
+            <input type="text" id="lname" name="lname" placeholder="Enter your last name" required> 
 
             <label for="suffix">Suffix:</label>
             <input type="text" id="suffix" name="suffix" placeholder="e.g., Jr., Sr., III">
 
             <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" name="dob">
+            <input type="date" id="dob" name="dob" required>
 
-            <label for="sex">Sex:</label>
-            <select id="sex" name="sex">
+            <label for="sex" >Sex:</label>
+            <select id="sex" name="sex" required>
+                <option value="---" selected disabled hidden >---</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
 
-            <label for="address">Address:</label>
+            <label for="address" required> Address:</label>
             <input type="text" id="address" name="address" placeholder="Enter your address">
 
-            <label for="city">City:</label>
+            <label for="city" required>City:</label>
             <input type="text" id="city" name="city" placeholder="Enter your city">
 
-            <label for="zip">Zip Code:</label>
+            <label for="zip" required>Zip Code:</label>
             <input type="text" id="zip" name="zip" placeholder="Enter your zip code">
 
             <label for="state">State:</label>
             <input type="text" id="state" name="state" placeholder="Enter your state">
 
-            <label for="country">Country:</label>
+            <label for="country" required>Country:</label>
             <input type="text" id="country" name="country" placeholder="Enter your country">
 
             <label for="language">Primary Language:</label>
             <input type="text" id="language" name="language" placeholder="Enter your primary language">
 
-            <label for="ssn">Last 4 digits of Social Security Number:</label>
+            <label for="ssn" required>Last 4 digits of Social Security Number:</label>
             <input type="text" id="ssn" name="ssn" maxlength="4" placeholder="****">
 
-            <label for="contact">Your Contact Phone Number:</label>
+            <label for="contact" required>Your Contact Phone Number:</label>
             <input type="tel" id="contact" name="contact" placeholder="Enter your phone number">
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email">
 
+        </section>
+
+
+        <section>
             <h3>Emergency Contacts</h3>
-            <label for="emergency1-fname">Emergency Contact 1 - First Name:</label>
+
+            <h5> Emergency Contact 1 </h5> 
+            <label for="emergency1-fname" >First Name:</label>
             <input type="text" id="emergency1-fname" name="emergency1-fname" placeholder="Enter first name">
 
             <label for="emergency1-lname">Last Name:</label>
@@ -114,7 +161,8 @@
             <label for="emergency1-email">Email:</label>
             <input type="email" id="emergency1-email" name="emergency1-email" placeholder="Enter email">
 
-            <label for="emergency2-fname">Emergency Contact 2 - First Name:</label>
+            <h5> Emergency Contact 2 </h5> 
+            <label for="emergency2-fname">First Name:</label>
             <input type="text" id="emergency2-fname" name="emergency2-fname" placeholder="Enter first name">
 
             <label for="emergency2-lname">Last Name:</label>
@@ -128,7 +176,10 @@
 
             <label for="emergency2-email">Email:</label>
             <input type="email" id="emergency2-email" name="emergency2-email" placeholder="Enter email">
+        </section>
 
+
+        <section>
             <h3>Insurance Information</h3>
             <label for="provider">Provider:</label>
             <input type="text" id="provider" name="provider" placeholder="Enter provider name">
@@ -141,12 +192,15 @@
 
             <label for="policy-dob">Date of Birth of Policy Holder:</label>
             <input type="date" id="policy-dob" name="policy-dob">
+        </section>
 
+
+        <section>
             <h3>Billing Address</h3>
-            <label for="billing-address">Address:</label>
+            <label for="billing-address" >Address:</label>
             <input type="text" id="billing-address" name="billing-address" placeholder="Enter billing address">
 
-            <label for="billing-city">City:</label>
+            <label for="billing-city" >City:</label>
             <input type="text" id="billing-city" name="billing-city" placeholder="Enter city">
 
             <label for="billing-zip">Zip Code:</label>
@@ -157,7 +211,10 @@
 
             <label for="billing-country">Country:</label>
             <input type="text" id="billing-country" name="billing-country" placeholder="Enter country">
+        </section>
 
+
+        <section>
             <h3>Medical History</h3>
             <label for="medications">Current Medications:</label>
             <textarea id="medications" name="medications" placeholder="List any current medications"></textarea>
@@ -172,9 +229,11 @@
             <textarea id="family-history" name="family-history" placeholder="Describe family medical history"></textarea>
         </form>
 
-        <button> 
-            submit
-        </button>
+
     </section>
+
+    <button type = submit class = "submit-button"> 
+        submit
+    </button>
 </body>
 </html>
