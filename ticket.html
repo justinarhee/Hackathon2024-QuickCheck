@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML File</title>
+    <style>
+        body {
+            font-family: Times New Roman;
+            background-color: #fefefe;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            font-family: Times New Roman;
+            background-color: rgb(173, 208, 226);
+            color: rgb(6, 0, 0);
+            padding: 2px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;  /* Center horizontally */
+            align-items: center;      /* Center vertically */
+            height: 80vh;            /* Full viewport height */
+        }
+        .box {
+            background-color: rgb(184, 219, 236); /* Blue background color */
+            padding: 20px;           /* Adds space inside the box */
+            border-radius: 10px;     /* Optional: rounded corners */
+            color: rgb(17, 1, 1);            /* White text color */
+            width: 500px;            /* Set the width of the box */
+            height: 400px;   
+            text-align: center;      /* Centers the text */
+        }
+        .box img {
+            max-width: 100%;         /* Ensures the image fits within the box */
+            height: auto;            /* Keeps the image aspect ratio */
+            margin-top: 10px;        /* Adds space between the image and the text */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <p style="text-align: center;">Fill Out Your Info | Scan the QR Code | Your All Set</p>
+    </header>
+
+    <section>
+        <p style="text-align: center; font-size: 20px;" >Here is your QR Code! Use it anytime you need to check in at a hospital</p>
+    </section>
+    <div class="container">
+        <div class="box">
+            <h3 text>Your AutoFilled Hospital Information</h3>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image" height = "300 px" width = "300 px">
+        </div>
+    </div>
+</body>
+</html>
