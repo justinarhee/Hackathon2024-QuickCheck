@@ -105,7 +105,7 @@ def get_input():
     patient_dict["Medications"] = request.form.get("medications")
     patient_dict["Allergies"] = request.form.get("allergies")
     patient_dict["Past Illnesses"] = request.form.get("past-illnesses")
-    patient_dict["Family History"] = request.form.get("family_history")
+    patient_dict["Family History"] = request.form.get("family-history")
     
     patient_keys = patient_dict.keys()
 
