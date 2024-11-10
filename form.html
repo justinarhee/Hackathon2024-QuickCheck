@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Information Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 1rem;
+            gap: 1.5rem;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #004494;
+        }
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 50rem;
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #0056b3;
+        }
+        label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .submit-button {
+            display: block;
+            margin: 2rem auto;
+            padding: 1rem 3rem;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .submit-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            section {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav a {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Fill Out Your Info | Scan the QR Code | You're All Set
+    </header>
+
+    <nav>
+        <a href="#form">Form</a>
+        <a href="#personal">Personal Information</a>
+        <a href="#emergency">Emergency Contacts</a>
+        <a href="#insurance">Insurance</a>
+        <a href="#billing">Billing Information</a>
+        <a href="#medical">Medical Information</a>
+    </nav>
+
+    <form method="post" id="form">
+        <section>
+            <h3 id="personal">Personal Information</h3>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+
+            <label for="mname">Middle Name</label>
+            <input type="text" id="mname" name="mname" placeholder="Enter your middle name">
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter your last name" required> 
+
+            <label for="suffix">Suffix</label>
+            <input type="text" id="suffix" name="suffix" placeholder="e.g., Jr., Sr., III">
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex" required>
+                <option value="---" selected disabled hidden>---</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address">
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Enter your city">
+
+            <label for="zip">Zip Code</label>
+            <input type="text" id="zip" name="zip" placeholder="Enter your zip code">
+
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" placeholder="Enter your state">
+
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" placeholder="Enter your country">
+
+            <label for="language">Primary Language</label>
+            <input type="text" id="language" name="language" placeholder="Enter your primary language">
+
+            <label for="ssn">Last 4 digits of Social Security Number</label>
+            <input type="text" id="ssn" name="ssn" maxlength="4" placeholder="****">
+
+            <label for="contact">Your Contact Phone Number</label>
+            <input type="tel" id="contact" name="contact" placeholder="Enter your phone number">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+        </section>
+
+        <section>
+            <h3 id="emergency">Emergency Contacts</h3>
+            <h4>Emergency Contact 1</h4>
+            <label for="emergency1-fname">First Name</label>
+            <input type="text" id="emergency1-fname" name="emergency1-fname" placeholder="Enter first name">
+
+            <label for="emergency1-lname">Last Name</label>
+            <input type="text" id="emergency1-lname" name="emergency1-lname" placeholder="Enter last name">
+
+            <label for="emergency1-relation">Relation to Patient</label>
+            <input type="text" id="emergency1-relation" name="emergency1-relation" placeholder="Enter relation">
+
+            <label for="emergency1-phone">Phone Number</label>
+            <input type="tel" id="emergency1-phone" name="emergency1-phone" placeholder="Enter phone number">
+
+            <label for="emergency1-email">Email</label>
+            <input type="email" id="emergency1-email" name="emergency1-email" placeholder="Enter email">
+
+            <h4>Emergency Contact 2</h4>
+            <label for="emergency2-fname">First Name</label>
+            <input type="text" id="emergency2-fname" name="emergency2-fname" placeholder="Enter first name">
+
+            <label for="emergency2-lname">Last Name</label>
+            <input type="text" id="emergency2-lname" name="emergency2-lname" placeholder="Enter last name">
+
+            <label for="emergency2-relation">Relation to Patient</label>
+            <input type="text" id="emergency2-relation" name="emergency2-relation" placeholder="Enter relation">
+
+            <label for="emergency2-phone">Phone Number</label>
+            <input type="tel" id="emergency2-phone" name="emergency2-phone" placeholder="Enter phone number">
+
+            <label for="emergency2-email">Email:</label>
+            <input type="email" id="emergency2-email" name="emergency2-email" placeholder="Enter email">
+        </section>
+
+        <section>
+            <h3 id="insurance">Insurance Information</h3>
+            <label for="provider">Provider</label>
+            <input type="text" id="provider" name="provider" placeholder="Enter provider name">
+
+            <label for="policy-number">Policy Number</label>
+            <input type="text" id="policy-number" name="policy-number" placeholder="Enter policy number">
+
+            <label for="policy-holder">Full Name of Policy Holder</label>
+            <input type="text" id="policy-holder" name="policy-holder" placeholder="Enter full name">
+
+            <label for="policy-dob">Date of Birth of Policy Holder</label>
+            <input type="date" id="policy-dob" name="policy-dob">
+        </section>
+
+        <section>
+            <h3 id="billing">Billing Address</h3>
+            <label for="billing-address">Address</label>
+            <input type="text" id="billing-address" name="billing-address" placeholder="Enter billing address">
+
+            <label for="billing-city">City</label>
+            <input type="text" id="billing-city" name="billing-city" placeholder="Enter city">
+
+            <label for="billing-zip">Zip Code</label>
+            <input type="text" id="billing-zip" name="billing-zip" placeholder="Enter zip code">
+
+            <label for="billing-state">State</label>
+            <input type="text" id="billing-state" name="billing-state" placeholder="Enter state">
+
+            <label for="billing-country">Country</label>
+            <input type="text" id="billing-country" name="billing-country" placeholder="Enter country">
+        </section>
+
+        <section>
+            <h3 id="medical">Medical History</h3>
+            <label for="medications">Current Medications</label>
+            <textarea id="medications" name="medications" placeholder="List any current medications"></textarea>
+
+            <label for="allergies">Allergies</label>
+            <textarea id="allergies" name="allergies" placeholder="List any known allergies"></textarea>
+
+            <label for="past-illnesses">Past Illnesses, Surgeries, and Treatments</label>
+            <textarea id="past-illnesses" name="past-illnesses" placeholder="Describe any relevant past medical conditions"></textarea>
+
+            <label for="family-history">Family Medical History (hereditary conditions)</label>
+            <textarea id="family-history" name="family-history" placeholder="Describe family medical history"></textarea>
+        </section>
+    </form>
+
+    <button type="submit" class="submit-button">Submit</button>
+</body>
+</html>
