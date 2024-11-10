@@ -1,7 +1,8 @@
 import pandas as pd
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request, redirect, url_for, send_file
 import csv
 import qrcode
+import os
 
 app = Flask(__name__)
 
@@ -21,7 +22,7 @@ def get_input():
     patient_dict["Suffix"] = request.form.get("suffix")
     patient_dict["Date of Birth"] = request.form.get("dob")
     patient_dict["Sex"] = request.form.get("sex")
-    patient_dict["Address"]= request.form.get("address")
+    patient_dict["Address"] = request.form.get("address")
     patient_dict["City"] = request.form.get("city")
     patient_dict["Zip"] = request.form.get("zip")
     patient_dict["State"] = request.form.get("state")
@@ -56,12 +57,15 @@ def get_input():
     
     patient_keys = patient_dict.keys()
 
-    file = open("patient.csv", "w")
-    writer = csv.DictWriter(file, fieldnames=patient_keys)
-    writer.writeheader()
-    writer.writerow(patient_dict)
+    csv_file_path = "patient.csv"
+    with open(csv_file_path, "w", newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=patient_keys)
+        writer.writeheader()
+        writer.writerow(patient_dict)
 
-    qrcode_ticket = qrcode.make(file)
+    qr_code_image_path = "qrcode.png"
+    qrcode_ticket = qrcode.make(request.host_url + csv_file_path)
+    qrcode_ticket.save(qr_code_image_path)
 
     return redirect(url_for('ticket_html'))
 
@@ -71,6 +75,13 @@ def ticket_html():
         html = f.read()
     return html
 
+@app.route('/qrcode.png')
+def serve_qr_code():
+    return send_file("qrcode.png", mimetype='image/png')
+
+@app.route('/patient.csv')
+def download_csv():
+    return send_file("patient.csv", as_attachment=True)
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True, threaded=False) # don't change this line!
-
