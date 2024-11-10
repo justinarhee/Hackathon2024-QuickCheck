@@ -76,8 +76,33 @@
             background-color: #b7cfd7;
 
         }
-
-
+        
+        /* Additional styling for buttons */
+        .button-container {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .clear-button, .logout-button {
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .clear-button {
+            background-color: #f0ad4e;
+            color: white;
+        }
+        .clear-button:hover {
+            background-color: #ec971f;
+        }
+        .logout-button {
+            background-color: #d9534f;
+            color: white;
+        }
+        .logout-button:hover {
+            background-color: #c9302c;
+        }
 
     </style>
 </head>
@@ -232,5 +257,21 @@
         </section>
         <button type="submit" class="submit-button">Submit</button>
         </form>
+    
+        <!-- Button container for Clear and Log Out -->
+        <div class="button-container">
+            <button type="button" class="clear-button" onclick="clearForm()">Clear All</button>
+            <a href="{{ url_for('logout') }}">
+                <button type="button" class="logout-button">Log Out</button>
+            </a>
+        </div>
+
+        <script>
+            // JavaScript function to clear the form
+            function clearForm() {
+                const form = document.querySelector("form");
+                form.reset();
+            }
+        </script>
 </body>
 </html>
