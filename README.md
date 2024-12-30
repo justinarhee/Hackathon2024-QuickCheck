@@ -7,7 +7,6 @@ QuickCheck is a website that prompts the user to fill out a form including their
 We used python and Flask to build the backend for the website. We used HTML, CSS, and Javascript to design the frontend. We also used Auth0 to build the login/logout configuration for the website to insure security and authorization.
 
 First, we had very minimal experience with Flask so it was interesting to figure out how to use GET and POST to gather user input and utilize that to build a database. Also, we experimented with Auth0, another tool we never used before so it was a bit of struggle to figure that out.
-Accomplishments that we're proud of
 
 We are proud of learning different libraries, frameworks, and packages that we previously haven't worked with. For example, figuring out how to send a csv file using a generated qrcode or implementing the Auth0 IdP was something we never knew before but we managed to figure out during this project.
 
