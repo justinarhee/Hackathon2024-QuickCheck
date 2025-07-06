@@ -13,3 +13,5 @@ We are proud of learning different libraries, frameworks, and packages that we p
 As our first Hackathon, we learned how vital communication is during the entire process and how complex the development/planning stage of a project can be.
 
 We want to figure out how to configure the website so that the user can save the QR code ticket directly onto their images or Apple Wallet which would make it even more convenient to access the QR code. We also want to work on the robustness of the program, considering things like privacy/security, edge cases/exceptions, and more.
+
+[View our Devpost submission here](https://devpost.com/software/quickcheck-yirwvl)
